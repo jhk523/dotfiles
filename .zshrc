@@ -1,10 +1,12 @@
+# for Linux
+	
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export DEFAULT_USER="$(whoami)"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/joseph/.oh-my-zsh"
+  export ZSH="/home/joseph/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -94,13 +96,22 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias 'vim'=/usr/local/Cellar/vim/8.1.0202/bin/vim
 
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH
 
-# added by Anaconda3 5.1.0 installer
-export PATH="/anaconda3/bin:$PATH"
 
+# added by Anaconda3 installer
+export PATH="/home/joseph/anaconda3/bin:$PATH"
+
+## CUDA and cuDNN paths
+export PATH=/usr/local/cuda-9.0/bin:${PATH}
+export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:${LD_LIBRARY_PATH}
+alias tmux='TERM=screen-256color tmux -2'
+alias tmuxinator='TERM=screen-256color tmuxinator'
+alias mux='TERM=screen-256color mux'
+
+
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
+
+# ow folder's color
+export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
