@@ -6,7 +6,7 @@
 export DEFAULT_USER="$(whoami)"
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/joseph/.oh-my-zsh"
+export ZSH="/home/joseph/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -97,21 +97,28 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-
-# added by Anaconda3 installer
-export PATH="/home/joseph/anaconda3/bin:$PATH"
-
-## CUDA and cuDNN paths
-export PATH=/usr/local/cuda-9.0/bin:${PATH}
-export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:${LD_LIBRARY_PATH}
-alias tmux='TERM=screen-256color tmux -2'
-alias tmuxinator='TERM=screen-256color tmuxinator'
-alias mux='TERM=screen-256color mux'
-
-
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 
 # ow folder's color
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/joseph/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/joseph/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/joseph/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/joseph/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export PATH="/usr/bin:$PATH"
+export PATH=~/anaconda3/bin:$PATH
+source /opt/ros/kinetic/setup.zsh
+source ~/catkin_ws/devel/setup.zsh
